@@ -6,12 +6,16 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 20:59:39 by kbenjell          #+#    #+#              #
-#    Updated: 2022/10/26 21:00:47 by kbenjell         ###   ########.fr        #
+#    Updated: 2022/10/26 22:22:09 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name
+CC = gcc
+
+
+$(NAME)
 all
 clean
 fclean
 re
+#bonus
