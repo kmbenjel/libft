@@ -6,16 +6,21 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 20:59:39 by kbenjell          #+#    #+#              #
-#    Updated: 2022/10/26 22:22:09 by kbenjell         ###   ########.fr        #
+#    Updated: 2022/10/29 09:54:35 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+SRC = *.c
+NAME = libft.a
 
+all: $(NAME)
 
-$(NAME)
-all
-clean
-fclean
-re
-#bonus
+$(NAME): %.o
+
+%.o: $(SRC)
+
+clean:
+	rm -f *.o
+fclean: clean
+	rm $(NAME)
+re: fclean all
