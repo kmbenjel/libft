@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/10/22 17:24:23 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/02 02:46:34 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,4 @@ int					ft_lstlast(int c);
 int					ft_lstadd_back(int c);
 int					ft_lstdelone(int c);
 int					ft_lstclear(int c);
-int					ft_lstiter(int c);
-int					ft_lstmap(int c);
+int					ft_lstiter(int c); int					ft_lstmap(int c);
