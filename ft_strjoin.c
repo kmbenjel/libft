@@ -19,5 +19,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		dest[ft_strlen(s1) + i] = s2[i];
 		i++;
 	}
+	dest[ft_strlen(s1) + i] = 0;
 	return (dest);
 }
