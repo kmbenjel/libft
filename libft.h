@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/02 02:46:34 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:36:31 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int					ft_strnstr(int c);
 int					ft_atoi(int c);
 int					ft_calloc(int c);
 int					ft_strdup(int c);
-int					ft_substr(int c);
+char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_strjoin(int c);
 int					ft_strtrim(int c);
 int					ft_split(int c);
@@ -57,4 +57,5 @@ int					ft_lstlast(int c);
 int					ft_lstadd_back(int c);
 int					ft_lstdelone(int c);
 int					ft_lstclear(int c);
-int					ft_lstiter(int c); int					ft_lstmap(int c);
+int					ft_lstiter(int c);
+int					ft_lstmap(int c);
