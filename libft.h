@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/02 21:07:05 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/03 21:03:41 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ size_t				ft_strlen(const char *s);
 //int					ft_strdup(int c);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
-//int					ft_strtrim(int c);
+char				*ft_strtrim(char const *s1, char const *set);
 //int					ft_split(int c);
 //int					ft_itoa(int c);
 //int					ft_strmapi(int c);
