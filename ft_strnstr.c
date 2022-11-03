@@ -6,34 +6,11 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:37:49 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/10/31 00:39:37 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/04 00:31:55 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
-{
-	unsigned int	i;
-
-	i = 0;
-	while ((s1[i] || s2[i]) && i < n)
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (0);
-}
-
-unsigned int	ft_strlen(const char *str)
-{
-	int	c;
-
-	c = 0;
-	while (str[c])
-		c++;
-	return (c);
-}
-
+#include "libft.h"
 char	*ft_strnstr(const char *haystack, const char *needle, unsigned int len)
 {
 	unsigned int	i;
