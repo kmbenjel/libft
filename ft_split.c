@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 20:28:36 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/05 23:02:26 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/05 23:07:46 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,12 @@ char	**ft_split(char const *s, char c)
 	int		*counts;
 	int		sc;
 	int		i;
+	int		j;
 
 	sc = splits_count(s, c);
-	counts = spllits_charcount(s, c, sc);
+	counts = splits_charcount(s, c, sc);
 	i = 0;
+	j = 0;
 	splits = (char **)malloc((sc + 1) * sizeof(char *));
 	if (!splits)
 		return (0);
@@ -94,7 +96,7 @@ char	**ft_split(char const *s, char c)
 		{
 			while (s[i] != c)
 			{
-				splits[j][i] == s[i];
+				splits[j][i] = s[i];
 				i++;
 			}
 			j++;

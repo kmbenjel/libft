@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/05 06:44:00 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/05 23:06:01 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char				*ft_strnstr(const char *haystack, const char *needle,
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
-//int					ft_split(int c);
+char				**ft_split(char const *s, char c);
 //int					ft_itoa(int c);
 //int					ft_strmapi(int c);
 //int					ft_striteri(int c);
