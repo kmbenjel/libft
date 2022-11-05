@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/04 00:35:24 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/04 00:40:57 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,14 @@ size_t				ft_strlen(const char *s);
 //int					ft_tolower(int c);
 //int					ft_strchr(int c);
 //int					ft_strrch(int c);
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-	//int					ft_memchr(int c);
-	//int					ft_strnstr(int c);
-	//int					ft_atoi(int c);
-	//int					ft_calloc(int c);
-	//int					ft_strdup(int c);
-	char *ft_substr(char const *s, unsigned int start, size_t len);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
+//int					ft_memchr(int c);
+char				*ft_strnstr(const char *haystack, const char *needle,
+						size_t len);
+//int					ft_atoi(int c);
+//int					ft_calloc(int c);
+//int					ft_strdup(int c);
+char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
 //int					ft_split(int c);
