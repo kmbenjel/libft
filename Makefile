@@ -6,7 +6,7 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 20:59:39 by kbenjell          #+#    #+#              #
-#    Updated: 2022/11/04 19:38:44 by kbenjell         ###   ########.fr        #
+#    Updated: 2022/11/05 07:52:25 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,18 +59,18 @@ SRC = 	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 
+OBJ = $(SRC:%.c=%.o)
+
+
 all: $(NAME)
 
-$(NAME): %.o
-	$(AR) $@ *.o
-
-%.o: $(SRC)
-	$(CC) $(CFLAGS) *.c
+$(NAME): $(OBJ)
+	$(AR) $(NAME) $(OBJ)
 
 clean:
-	rm -f *.o
+	$(RM) $(OBJ)
 
 fclean: clean
-	rm $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
