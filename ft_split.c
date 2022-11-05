@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 20:28:36 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/05 23:07:46 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/05 23:23:15 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,11 @@ char	**ft_split(char const *s, char c)
 	splits = (char **)malloc((sc + 1) * sizeof(char *));
 	if (!splits)
 		return (0);
-	while (i < sc)
+	while (i <= sc)
 	{
 		splits[i] = (char *)malloc((counts[i] + 1) * sizeof(char));
+		if (splits[i])
+			return (0);
 		i++;
 	}
 	while (s[i])
@@ -102,5 +104,6 @@ char	**ft_split(char const *s, char c)
 			j++;
 		}
 	}
+	splits[j] = 0;
 	return (splits);
 }
