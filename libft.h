@@ -6,11 +6,14 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/04 00:40:57 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/05 06:44:00 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <stdlib.h>
+
 typedef struct a_list
 {
 	void			*content;
@@ -60,3 +63,5 @@ char				*ft_strtrim(char const *s1, char const *set);
 //int					ft_lstclear(int c);
 //int					ft_lstiter(int c);
 //int					ft_lstmap(int c);
+
+#endif
