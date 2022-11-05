@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 20:28:36 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/05 23:23:15 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/06 00:49:03 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	*splits_charcount(char const *s, char c, int sc)
 		}
 		else
 		{
+			counts[j] = 0;
 			while (s[i] != c)
 			{
 				counts[j]++;
@@ -68,41 +69,49 @@ int	*splits_charcount(char const *s, char c, int sc)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**splits;
-	int		*counts;
-	int		sc;
-	int		i;
-	int		j;
+	char **splits;
+	int *counts;
+	int sc;
+	int i;
+	int j;
+	int k;
+	int l;
 
 	sc = splits_count(s, c);
 	counts = splits_charcount(s, c, sc);
 	i = 0;
 	j = 0;
-	splits = (char **)malloc((sc + 1) * sizeof(char *));
+	k = 0;
+	l = 0;
+	splits = malloc((sc + 1) * sizeof(char *));
 	if (!splits)
 		return (0);
 	while (i <= sc)
 	{
-		splits[i] = (char *)malloc((counts[i] + 1) * sizeof(char));
-		if (splits[i])
+		splits[i] = malloc((counts[i] + 1) * sizeof(char));
+		if (!splits[i])
 			return (0);
 		i++;
 	}
+	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] != c)
 		{
-			i++;
-		}
-		else
-		{
-			while (s[i] != c)
+			k = counts[j];
+			while (k > 0)
 			{
-				splits[j][i] = s[i];
+				splits[j][l] = s[i];
 				i++;
+				k--;
+				l++;
 			}
+			splits[j][l] = 0;
+			l = 0;
 			j++;
 		}
+		else
+			i++;
 	}
 	splits[j] = 0;
 	return (splits);
