@@ -90,6 +90,7 @@ char	**ft_split(char const *s, char c)
 		else //if (s[i] == c)
 			i++;
 	}
+	free(counts);
 	splits[j] = 0;
 	return (splits);
 }
