@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 06:24:56 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/05 06:40:41 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/08 06:06:01 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char			*dest;
 	unsigned int	i;
 
+	if (!s1)
+		s1 = "";
+	if (!s2)
+		s2 = "";
 	dest = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	i = 0;
-	if (dest == 0)
+	if (!dest)
 		return (0);
 	while (s1[i])
 	{

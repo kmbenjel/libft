@@ -21,7 +21,7 @@ int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 {
 	int	*counts;
 
-	counts = (int *)malloc((sc + 1) * sizeof(int));
+	counts = (int *)malloc(sc * sizeof(int));
 	if (!counts)
 		return (0);
 	while (s[i])
@@ -36,11 +36,9 @@ int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 			}
 			j++;
 		}
-		else
+		else //if (s[i] == c)
 			i++;
 	}
-	counts[j] = 0;
-	//free(counts);
 	return (counts);
 }
 
@@ -54,6 +52,8 @@ char	**ft_split(char const *s, char c)
 	int		k;
 	int		l;
 
+	if (!s)
+		return (NULL);
 	sc = splits_count(s, c, 0, 0);
 	counts = splits_charcount(s, c, sc, 0, 0);
 	i = 0;
@@ -65,7 +65,7 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	while (i <= sc)
 	{
-		splits[i] = malloc((counts[i] + 1) * sizeof(char));
+		splits[i] = (char *)malloc((counts[i] + 1) * sizeof(char));
 		if (!splits[i])
 			return (0);
 		i++;
@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c)
 		{
 			k = counts[j];
-			while (k > 0)
+			while (k)
 			{
 				splits[j][l] = s[i];
 				i++;
@@ -87,33 +87,9 @@ char	**ft_split(char const *s, char c)
 			l = 0;
 			j++;
 		}
-		else
+		else //if (s[i] == c)
 			i++;
 	}
 	splits[j] = 0;
-	i = sc - 1;
-	//free(splits);
-	// while (i >= 0)
-	// {
-	//     free(splits[i]);
-	//     i--;
-	// }
 	return (splits);
-}
-
-int	main(void)
-{
-	int i;
-	const char *s;
-	char **split;
-
-	s = "ccXXXxxXccccAAvAAcccccDDvDDcLLvLLcccc";
-	split = ft_split(s, 'p');
-	i = 0;
-	while (split[i])
-	{
-		printf("%s\n", split[i]);
-		i++;
-	}
-	return (0);
 }
