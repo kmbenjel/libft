@@ -1,58 +1,32 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 20:28:36 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/06 00:49:03 by kbenjell         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include <stdio.h>
+#include <stdlib.h>
 
-#include "libft.h"
-
-int	splits_count(char const *s, char c)
+static int	splits_count(char const *s, char c, int splits, int i)
 {
-	int	splits;
-	int	i;
-
-	splits = 0;
-	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-		{
-			i++;
-		}
-		else
+		if (s[i] != c)
 		{
 			splits++;
 			while (s[i] != c)
 				i++;
 		}
+		else
+			i++;
 	}
 	return (splits);
 }
 
-int	*splits_charcount(char const *s, char c, int sc)
+int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 {
-	int	i;
-	int	j;
 	int	*counts;
 
-	i = 0;
-	j = 0;
 	counts = (int *)malloc((sc + 1) * sizeof(int));
 	if (!counts)
 		return (0);
 	while (s[i])
 	{
-		if (s[i] == c)
-		{
-			i++;
-		}
-		else
+		if (s[i] != c)
 		{
 			counts[j] = 0;
 			while (s[i] != c)
@@ -62,23 +36,26 @@ int	*splits_charcount(char const *s, char c, int sc)
 			}
 			j++;
 		}
+		else
+			i++;
 	}
 	counts[j] = 0;
+	free(counts);
 	return (counts);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char **splits;
-	int *counts;
-	int sc;
-	int i;
-	int j;
-	int k;
-	int l;
+	char	**splits;
+	int		*counts;
+	int		sc;
+	int		i;
+	int		j;
+	int		k;
+	int		l;
 
-	sc = splits_count(s, c);
-	counts = splits_charcount(s, c, sc);
+	sc = splits_count(s, c, 0, 0);
+	counts = splits_charcount(s, c, sc, 0, 0);
 	i = 0;
 	j = 0;
 	k = 0;
@@ -114,5 +91,29 @@ char	**ft_split(char const *s, char c)
 			i++;
 	}
 	splits[j] = 0;
+	i = sc - 1;
+	free(splits);
+	// while (i >= 0)
+	// {
+	// 	free(splits[i]);
+	// 	i--;
+	// }
 	return (splits);
 }
+
+// int	main(void)
+// {
+// 	int			i;
+// 	const char	*s;
+// 	char		**split;
+
+// 	s = "ccXXXxxXccccAAvAAcccccDDvDDcLLvLLcccc";
+// 	split = ft_split(s, 'c');
+// 	i = 0;
+// 	while (split[i])
+// 	{
+// 		printf("%s\n", split[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
