@@ -8,7 +8,7 @@ static int	splits_count(char const *s, char c, int splits, int i)
 		if (s[i] != c)
 		{
 			splits++;
-			while (s[i] != c)
+			while (s[i] && s[i] != c)
 				i++;
 		}
 		else
@@ -29,7 +29,7 @@ int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 		if (s[i] != c)
 		{
 			counts[j] = 0;
-			while (s[i] != c)
+			while (s[i] && s[i] != c)
 			{
 				counts[j]++;
 				i++;
@@ -40,7 +40,7 @@ int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 			i++;
 	}
 	counts[j] = 0;
-	free(counts);
+	//free(counts);
 	return (counts);
 }
 
@@ -92,28 +92,28 @@ char	**ft_split(char const *s, char c)
 	}
 	splits[j] = 0;
 	i = sc - 1;
-	free(splits);
+	//free(splits);
 	// while (i >= 0)
 	// {
-	// 	free(splits[i]);
-	// 	i--;
+	//     free(splits[i]);
+	//     i--;
 	// }
 	return (splits);
 }
 
-// int	main(void)
-// {
-// 	int			i;
-// 	const char	*s;
-// 	char		**split;
+int	main(void)
+{
+	int i;
+	const char *s;
+	char **split;
 
-// 	s = "ccXXXxxXccccAAvAAcccccDDvDDcLLvLLcccc";
-// 	split = ft_split(s, 'c');
-// 	i = 0;
-// 	while (split[i])
-// 	{
-// 		printf("%s\n", split[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }
+	s = "ccXXXxxXccccAAvAAcccccDDvDDcLLvLLcccc";
+	split = ft_split(s, 'p');
+	i = 0;
+	while (split[i])
+	{
+		printf("%s\n", split[i]);
+		i++;
+	}
+	return (0);
+}
