@@ -17,7 +17,7 @@ static int	splits_count(char const *s, char c, int splits, int i)
 	return (splits);
 }
 
-int	*splits_charcount(char const *s, char c, int sc, int i, int j)
+static int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 {
 	int	*counts;
 
@@ -90,7 +90,7 @@ char	**ft_split(char const *s, char c)
 		else //if (s[i] == c)
 			i++;
 	}
-	free(counts);
 	splits[j] = 0;
+	free(counts);
 	return (splits);
 }
