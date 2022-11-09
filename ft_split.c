@@ -21,7 +21,7 @@ int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 {
 	int	*counts;
 
-	counts = (int *)malloc(sc * sizeof(int));
+	counts = (int *)malloc((sc + 1) * sizeof(int));
 	if (!counts)
 		return (0);
 	while (s[i])
@@ -39,6 +39,7 @@ int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 		else //if (s[i] == c)
 			i++;
 	}
+	counts[j] = 0;
 	return (counts);
 }
 
@@ -56,6 +57,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	sc = splits_count(s, c, 0, 0);
 	counts = splits_charcount(s, c, sc, 0, 0);
+	printf("Counts: %p, %d\n", counts, counts[0]);
 	i = 0;
 	j = 0;
 	k = 0;
@@ -91,6 +93,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 	}
 	free(counts);
+	printf("\nCounts: %p, %d\n", counts, counts[0]);
 	splits[j] = 0;
 	return (splits);
 }
