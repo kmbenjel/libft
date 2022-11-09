@@ -63,7 +63,7 @@ char	**ft_split(char const *s, char c)
 	while (i <= sc)
 	{
 		splits[i] = malloc((counts[i] + 1) * sizeof(char));
-		if (!splits[i] && i != sc)
+		if (!splits[i])
 			return (0);
 		i++;
 	}
@@ -87,6 +87,6 @@ char	**ft_split(char const *s, char c)
 			s++;
 	}
 	free(counts);
-	splits[i] = 0;
+	//splits[i] = 0;
 	return (splits);
 }
