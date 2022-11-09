@@ -8,7 +8,7 @@ static int	splits_count(char const *s, char c, int splits, int i)
 		if (s[i] != c)
 		{
 			splits++;
-			while (s[i] != c)
+			while (s[i] && s[i] != c)
 				i++;
 		}
 		else
@@ -29,7 +29,7 @@ int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 		if (s[i] != c)
 		{
 			counts[j] = 0;
-			while (s[i] != c)
+			while (s[i] && s[i] != c)
 			{
 				counts[j]++;
 				i++;
@@ -42,6 +42,35 @@ int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 	counts[j] = 0;
 	return (counts);
 }
+
+char	**ft_splits_filler(char **splits, int *counts, int s_i, int sc_i)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			while (counts[i])
+			{
+				splits[s_i][sc_i] = *s;
+				counts[s_i]--;
+				sc_i++;
+				i++;
+			}
+			splits[s_i][ci] = 0;
+			sc_i = 0;
+			s_i++;
+		}
+		else
+			i++;
+	}
+	splits[s_i] = 0;
+	return (splits);
+}
+
+//	`s_i` means split index, `sc_i` means split's char index.
 
 char	**ft_split(char const *s, char c)
 {
@@ -67,26 +96,7 @@ char	**ft_split(char const *s, char c)
 			return (0);
 		i++;
 	}
-	i = 0;
-	while (*s)
-	{
-		if (*s != c)
-		{
-			while (counts[i])
-			{
-				splits[i][ci] = *s;
-				counts[i]--;
-				ci++;
-				s++;
-			}
-			splits[i][ci] = 0;
-			ci = 0;
-			i++;
-		}
-		else
-			s++;
-	}
+	ft_splits_filler(splits, counts, 0, 0);
 	free(counts);
-	//splits[i] = 0;
 	return (splits);
 }
