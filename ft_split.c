@@ -42,6 +42,8 @@ static int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 	return (counts);
 }
 
+static 
+
 char	**ft_split(char const *s, char c)
 {
 	char	**splits;
