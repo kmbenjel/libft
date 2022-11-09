@@ -8,7 +8,7 @@ static int	splits_count(char const *s, char c, int splits, int i)
 		if (s[i] != c)
 		{
 			splits++;
-			while (s[i] && s[i] != c)
+			while (s[i] != c)
 				i++;
 		}
 		else
@@ -29,7 +29,7 @@ int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 		if (s[i] != c)
 		{
 			counts[j] = 0;
-			while (s[i] && s[i] != c)
+			while (s[i] != c)
 			{
 				counts[j]++;
 				i++;
@@ -87,6 +87,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 	}
 	free(counts);
+	free(sc);
 	splits[i] = 0;
 	return (splits);
 }
