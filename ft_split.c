@@ -36,7 +36,7 @@ int	*splits_charcount(char const *s, char c, int sc, int i, int j)
 			}
 			j++;
 		}
-		else //if (s[i] == c)
+		else
 			i++;
 	}
 	counts[j] = 0;
@@ -49,19 +49,14 @@ char	**ft_split(char const *s, char c)
 	int		*counts;
 	int		sc;
 	int		i;
-	int		j;
-	int		k;
-	int		l;
+	int		ci;
 
 	if (!s)
 		return (NULL);
 	sc = splits_count(s, c, 0, 0);
 	counts = splits_charcount(s, c, sc, 0, 0);
-	//printf("Counts: %p, %d\n", counts, counts[0]);
 	i = 0;
-	j = 0;
-	k = 0;
-	l = 0;
+	ci = 0;
 	splits = malloc((sc + 1) * sizeof(char *));
 	if (!splits)
 		return (0);
@@ -73,27 +68,25 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
-			k = counts[j];
-			while (k)
+			while (counts[i])
 			{
-				splits[j][l] = s[i];
-				i++;
-				k--;
-				l++;
+				splits[i][ci] = *s;
+				counts[i]--;
+				ci++;
+				s++;
 			}
-			splits[j][l] = 0;
-			l = 0;
-			j++;
-		}
-		else //if (s[i] == c)
+			splits[i][ci] = 0;
+			ci = 0;
 			i++;
+		}
+		else
+			s++;
 	}
 	free(counts);
-	//printf("\nCounts: %p, %d\n", counts, counts[0]);
-	splits[j] = 0;
+	splits[i] = 0;
 	return (splits);
 }
