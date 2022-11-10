@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 01:14:31 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/10 03:48:06 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/10 03:54:21 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,9 @@ void	ft_free_previous(char **splits)
 	}
 	free(splits);
 }
+
+/* FT_FREE_PREVIOUS is intended to free all allocated memory in case
+   allocation for a given string of chars fails. */
 
 char	**ft_split(char const *s, char c)
 {
