@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 01:14:31 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/10 02:45:53 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/10 03:30:22 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	*splits_charcount(char const *s, char c, int sc, int i)
 {
 	int	*counts;
 
-	counts = (int *)malloc((sc + 1) * sizeof(int));
+	counts = (int *)malloc(sc * sizeof(int));
 	if (!counts)
 		return (0);
 	while (*s)
@@ -51,7 +51,6 @@ int	*splits_charcount(char const *s, char c, int sc, int i)
 		else
 			s++;
 	}
-	counts[i] = 0;
 	return (counts);
 }
 
@@ -106,24 +105,23 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	if (!s)
-		return (NULL);
+		return (0);
 	i = -1;
 	sc = splits_count(s, c, 0, 0);
 	counts = splits_charcount(s, c, sc, 0);
 	splits = malloc((sc + 1) * sizeof(char *));
 	if (!splits)
 		return (0);
-	while (++i <= sc)
+	while (++i < sc)
 	{
-		printf("%d\n", i);
 		splits[i] = malloc((counts[i] + 1) * sizeof(const char));
-		system("leaks a.out");
-		if (!splits[i])
-		{
-			ft_free_previous(splits);
-			return (0);
-		}
+		// if (!splits[i])
+		// {
+		// 	ft_free_previous(splits);
+		// 	return (0);
+		// }
 	}
+	splits[i] = 0;
 	ft_splits_filler(splits, counts, s, c);
 	free(counts);
 	return (splits);
