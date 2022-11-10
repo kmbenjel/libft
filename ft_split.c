@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 01:14:31 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/10 01:51:49 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/10 02:45:53 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,9 +113,11 @@ char	**ft_split(char const *s, char c)
 	splits = malloc((sc + 1) * sizeof(char *));
 	if (!splits)
 		return (0);
-	while (i++ <= sc)
+	while (++i <= sc)
 	{
+		printf("%d\n", i);
 		splits[i] = malloc((counts[i] + 1) * sizeof(const char));
+		system("leaks a.out");
 		if (!splits[i])
 		{
 			ft_free_previous(splits);
