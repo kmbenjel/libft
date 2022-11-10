@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/10 01:14:31 by kbenjell          #+#    #+#             */
+/*   Updated: 2022/11/10 01:51:49 by kbenjell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -17,54 +29,55 @@ static int	splits_count(char const *s, char c, int splits, int i)
 	return (splits);
 }
 
-int	*splits_charcount(char const *s, char c, int sc, int i, int j)
+int	*splits_charcount(char const *s, char c, int sc, int i)
 {
 	int	*counts;
 
 	counts = (int *)malloc((sc + 1) * sizeof(int));
 	if (!counts)
 		return (0);
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
-			counts[j] = 0;
-			while (s[i] && s[i] != c)
+			counts[i] = 0;
+			while (*s && *s != c)
 			{
-				counts[j]++;
-				i++;
+				counts[i]++;
+				s++;
 			}
-			j++;
+			i++;
 		}
 		else
-			i++;
+			s++;
 	}
-	counts[j] = 0;
+	counts[i] = 0;
 	return (counts);
 }
 
-char	**ft_splits_filler(char **splits, int *counts, int s_i, int sc_i)
+char	**ft_splits_filler(char **splits, int *counts, char const *s, char c)
 {
-	int i;
+	int	s_i;
+	int	sc_i;
 
-	i = 0;
-	while (s[i])
+	s_i = 0;
+	sc_i = 0;
+	while (*s)
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
-			while (counts[i])
+			while (counts[s_i]--)
 			{
 				splits[s_i][sc_i] = *s;
-				counts[s_i]--;
 				sc_i++;
-				i++;
+				s++;
 			}
-			splits[s_i][ci] = 0;
+			splits[s_i][sc_i] = 0;
 			sc_i = 0;
 			s_i++;
 		}
 		else
-			i++;
+			s++;
 	}
 	splits[s_i] = 0;
 	return (splits);
@@ -72,31 +85,44 @@ char	**ft_splits_filler(char **splits, int *counts, int s_i, int sc_i)
 
 //	`s_i` means split index, `sc_i` means split's char index.
 
+void	ft_free_previous(char **splits)
+{
+	int	i;
+
+	i = 0;
+	while (splits[i])
+	{
+		free(splits[i]);
+		i++;
+	}
+	free(splits);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**splits;
 	int		*counts;
 	int		sc;
 	int		i;
-	int		ci;
 
 	if (!s)
 		return (NULL);
+	i = -1;
 	sc = splits_count(s, c, 0, 0);
-	counts = splits_charcount(s, c, sc, 0, 0);
-	i = 0;
-	ci = 0;
+	counts = splits_charcount(s, c, sc, 0);
 	splits = malloc((sc + 1) * sizeof(char *));
 	if (!splits)
 		return (0);
-	while (i <= sc)
+	while (i++ <= sc)
 	{
-		splits[i] = malloc((counts[i] + 1) * sizeof(char));
+		splits[i] = malloc((counts[i] + 1) * sizeof(const char));
 		if (!splits[i])
+		{
+			ft_free_previous(splits);
 			return (0);
-		i++;
+		}
 	}
-	ft_splits_filler(splits, counts, 0, 0);
+	ft_splits_filler(splits, counts, s, c);
 	free(counts);
 	return (splits);
 }
