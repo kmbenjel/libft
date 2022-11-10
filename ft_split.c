@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 01:14:31 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/10 03:30:22 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/10 03:48:06 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ char	**ft_splits_filler(char **splits, int *counts, char const *s, char c)
 			s++;
 	}
 	splits[s_i] = 0;
+	free(counts);
 	return (splits);
 }
 
@@ -115,14 +116,13 @@ char	**ft_split(char const *s, char c)
 	while (++i < sc)
 	{
 		splits[i] = malloc((counts[i] + 1) * sizeof(const char));
-		// if (!splits[i])
-		// {
-		// 	ft_free_previous(splits);
-		// 	return (0);
-		// }
+		if (!splits[i])
+		{
+			ft_free_previous(splits);
+			return (0);
+		}
 	}
 	splits[i] = 0;
 	ft_splits_filler(splits, counts, s, c);
-	free(counts);
 	return (splits);
 }
