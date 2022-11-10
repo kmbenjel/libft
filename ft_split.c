@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 01:14:31 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/10 11:21:19 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:11:35 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,14 @@ char	**ft_splits_filler(char **splits, int *counts, char const *s, char c)
 				sc_i++;
 				s++;
 			}
-			splits[s_i][sc_i] = 0;
+			splits[s_i][sc_i] = '\0';
 			sc_i = 0;
 			s_i++;
 		}
 		else
 			s++;
 	}
-	splits[s_i] = 0;
+	splits[s_i] = NULL;
 	free(counts);
 	return (splits);
 }
@@ -131,7 +131,6 @@ char	**ft_split(char const *s, char c)
 			return (0);
 		}
 	}
-	splits[i] = 0;
 	ft_splits_filler(splits, counts, s, c);
 	return (splits);
 }

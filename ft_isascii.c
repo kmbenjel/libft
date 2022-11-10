@@ -6,11 +6,11 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:23:11 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/02 18:44:37 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/10 12:28:54 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(void)
+int	ft_isascii(void)
 {
 	return (0);
 }
