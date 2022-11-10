@@ -6,14 +6,14 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 01:14:31 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/10 03:54:21 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/10 11:21:19 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-static int	splits_count(char const *s, char c, int splits, int i)
+static int	ft_splits_count(char const *s, char c, int splits, int i)
 {
 	while (s[i])
 	{
@@ -29,7 +29,10 @@ static int	splits_count(char const *s, char c, int splits, int i)
 	return (splits);
 }
 
-int	*splits_charcount(char const *s, char c, int sc, int i)
+/*	FT_SPLITS_COUNT() is intended to count how many char strings should
+    occur in the array of strings returned from FT_SPLIT() . */
+
+int	*ft_splits_charcount(char const *s, char c, int sc, int i)
 {
 	int	*counts;
 
@@ -53,6 +56,9 @@ int	*splits_charcount(char const *s, char c, int sc, int i)
 	}
 	return (counts);
 }
+
+/*	FT_SPLITS_CHARCOUNT() is intended to count how many chars should occur
+    in every string in the array returned from FT_SPLIT() . */
 
 char	**ft_splits_filler(char **splits, int *counts, char const *s, char c)
 {
@@ -98,8 +104,8 @@ void	ft_free_previous(char **splits)
 	free(splits);
 }
 
-/* FT_FREE_PREVIOUS is intended to free all allocated memory in case
-   allocation for a given string of chars fails. */
+/*	FT_FREE_PREVIOUS() is intended to free all allocated memory in case
+    allocation for a given string of chars fails. */
 
 char	**ft_split(char const *s, char c)
 {
@@ -111,8 +117,8 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (0);
 	i = -1;
-	sc = splits_count(s, c, 0, 0);
-	counts = splits_charcount(s, c, sc, 0);
+	sc = ft_splits_count(s, c, 0, 0);
+	counts = ft_splits_charcount(s, c, sc, 0);
 	splits = malloc((sc + 1) * sizeof(char *));
 	if (!splits)
 		return (0);
