@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                        ::
+\s
+:    :::::::
+\s
+: */
+/*   libft.h                                            :+
+\s
+:    :+
+\s
+:  :+
+\s
+: */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
+/*   By
+\s:kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/05 23:06:01 by kbenjell         ###   ########.fr       */
+/*   Created
+\s:2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
+/*   Updated
+\s:2022/11/05 23:06:01 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
-
 typedef struct a_list
 {
 	void			*content;
 	struct a_list	*next;
-
 }					t_list;
-
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -63,5 +72,4 @@ char				**ft_split(char const *s, char c);
 //int					ft_lstclear(int c);
 //int					ft_lstiter(int c);
 //int					ft_lstmap(int c);
-
 #endif
