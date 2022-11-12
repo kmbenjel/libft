@@ -36,7 +36,7 @@ int					ft_isdigit(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
 size_t				ft_strlen(const char *s);
-//int					ft_memset(int c);
+void				*ft_memset(void *b, int c, size_t len);
 //int					ft_bzero(int c);
 //int					ft_memcpy(int c);
 //int					ft_memove(int c);
