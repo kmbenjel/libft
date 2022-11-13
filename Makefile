@@ -1,27 +1,15 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         ::
-\s
-:    :::::::
-\s
-:  #
-#    Makefile                                           :+
-\s
-:    :+
-\s
-:  :+
-\s
-:  #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By
-\s:kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
+#    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created
-\s:2022/10/26 20:59:39 by kbenjell          #+#    #+#              #
-#    Updated
-\s:2022/11/05 07:52:25 by kbenjell         ###   ########.fr        #
+#    Created: 2022/11/13 20:05:34 by kbenjell          #+#    #+#              #
+#    Updated: 2022/11/13 20:06:46 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 NAME = libft.a
 RM = rm -Rf
 CFLAGS = -Wall -Wextra -Werror -c
@@ -69,16 +57,18 @@ SRC = 	ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c \
+
 OBJ = $(SRC:%.c=%.o)
-all
-\s:$(NAME)
-$(NAME)
-\s:$(OBJ)
+
+all : $(NAME)
+
+$(NAME) : $(OBJ)
 	$(AR) $(NAME) $(OBJ)
-clean:
+
+clean :
 	$(RM) $(OBJ)
-fclean
-\s:clean
+
+fclean : clean
 	$(RM) $(NAME)
-re
-\s:fclean all
+
+re : fclean all
