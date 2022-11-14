@@ -6,11 +6,13 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:42:13 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/14 15:49:51 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:11:59 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
+
 static int	ft_splits_count(char const *s, char c, int splits, int i)
 {
 	while (s[i])
