@@ -6,11 +6,12 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 00:39:53 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/14 19:43:35 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/14 19:46:49 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -18,5 +19,5 @@ void	ft_bzero(void *s, size_t n)
 
 	p = s;
 	while (n--)
-		*p = 0;
+		*(p + n) = 0;
 }
