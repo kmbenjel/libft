@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::
-\s
-:    :::::::
-\s
-: */
-/*   ft_strlen.c                                        :+
-\s
-:    :+
-\s
-:  :+
-\s
-: */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By
-\s:kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created
-\s:2022/11/02 21:11:22 by kbenjell          #+#    #+#             */
-/*   Updated
-\s:2022/11/10 12:18:25 by kbenjell         ###   ########.fr       */
+/*   Created: 2022/11/02 21:11:22 by kbenjell          #+#    #+#             */
+/*   Updated: 2022/11/13 23:52:31 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
+#include <stdlib.h>
 size_t	ft_strlen(const char *str)
 {
 	unsigned int	c;

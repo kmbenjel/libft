@@ -1,27 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::
-\s
-:    :::::::
-\s
-: */
-/*   libft.h                                            :+
-\s
-:    :+
-\s
-:  :+
-\s
-: */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By
-\s:kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created
-\s:2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated
-\s:2022/11/05 23:06:01 by kbenjell         ###   ########.fr       */
+/*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
+/*   Updated: 2022/11/13 23:49:41 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
@@ -37,7 +25,7 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 size_t				ft_strlen(const char *s);
 void				*ft_memset(void *b, int c, size_t len);
-//int					ft_bzero(int c);
+void				ft_bzero(void *s, size_t n);
 //int					ft_memcpy(int c);
 //int					ft_memove(int c);
 //int					ft_strlcpy(int c);

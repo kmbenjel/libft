@@ -1,28 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::
-\s
-:    :::::::
-\s
-: */
-/*   ft_substr.c                                        :+
-\s
-:    :+
-\s
-:  :+
-\s
-: */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By
-\s:kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created
-\s:2022/11/02 00:57:11 by kbenjell          #+#    #+#             */
-/*   Updated
-\s:2022/11/08 06:00:49 by kbenjell         ###   ########.fr       */
+/*   Created: 2022/11/02 00:57:11 by kbenjell          #+#    #+#             */
+/*   Updated: 2022/11/13 23:35:06 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*sub;

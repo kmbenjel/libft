@@ -1,27 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::
-\s
-:    :::::::
-\s
-: */
-/*   ft_strncmp.c                                       :+
-\s
-:    :+
-\s
-:  :+
-\s
-: */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By
-\s:kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created
-\s:2022/11/03 21:39:09 by kbenjell          #+#    #+#             */
-/*   Updated
-\s:2022/11/05 07:48:28 by kbenjell         ###   ########.fr       */
+/*   Created: 2022/11/03 21:39:09 by kbenjell          #+#    #+#             */
+/*   Updated: 2022/11/13 23:45:47 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdlib.h>
 int	ft_strncmp(const char *s1, const char *s2, size_t n) {
   size_t i;
