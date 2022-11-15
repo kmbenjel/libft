@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 23:48:20 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/15 21:22:39 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/15 21:23:44 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*source;
 	int		i;
 
-	i = -1;
+	i = 0;
 	p = dst;
 	tmp = (char *)src + len * 2;
 	source = (char *)src;
