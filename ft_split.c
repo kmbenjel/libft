@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:42:13 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/14 17:11:59 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/17 08:53:46 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ int	*ft_splits_charcount(char const *s, char c, int sc, int i)
 }
 /*	FT_SPLITS_CHARCOUNT() is intended to count how many chars should occur
     in every string in the array returned from FT_SPLIT() . */
-char	**ft_splits_filler(char **splits, int *counts, char const *s, char c)
+static char	**ft_splits_filler(char **splits, int *counts, char const *s,
+		char c)
 {
 	int	s_i;
 	int	sc_i;
@@ -85,7 +86,7 @@ char	**ft_splits_filler(char **splits, int *counts, char const *s, char c)
 	return (splits);
 }
 //	`s_i` means split index, `sc_i` means split's char index.
-void	ft_free_previous(char **splits)
+static void	ft_free_previous(char **splits)
 {
 	int	i;
 
