@@ -6,12 +6,13 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:37:49 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/13 23:53:02 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/17 22:41:22 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	unsigned int	i;

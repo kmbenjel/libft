@@ -6,11 +6,9 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:42:13 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/17 08:53:46 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/17 22:40:05 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 #include <stdlib.h>
 
 static int	ft_splits_count(char const *s, char c, int splits, int i)
@@ -28,8 +26,10 @@ static int	ft_splits_count(char const *s, char c, int splits, int i)
 	}
 	return (splits);
 }
+
 /*	FT_SPLITS_COUNT() is intended to count how many char strings should
     occur in the array of strings returned from FT_SPLIT() . */
+
 int	*ft_splits_charcount(char const *s, char c, int sc, int i)
 {
 	int	*counts;
@@ -54,8 +54,10 @@ int	*ft_splits_charcount(char const *s, char c, int sc, int i)
 	}
 	return (counts);
 }
+
 /*	FT_SPLITS_CHARCOUNT() is intended to count how many chars should occur
     in every string in the array returned from FT_SPLIT() . */
+
 static char	**ft_splits_filler(char **splits, int *counts, char const *s,
 		char c)
 {
@@ -85,7 +87,9 @@ static char	**ft_splits_filler(char **splits, int *counts, char const *s,
 	free(counts);
 	return (splits);
 }
+
 //	`s_i` means split index, `sc_i` means split's char index.
+
 static void	ft_free_previous(char **splits)
 {
 	int	i;
@@ -98,8 +102,10 @@ static void	ft_free_previous(char **splits)
 	}
 	free(splits);
 }
+
 /*	FT_FREE_PREVIOUS() is intended to free all allocated memory in case
     allocation for a given string of chars fails. */
+
 char	**ft_split(char const *s, char c)
 {
 	char	**splits;
