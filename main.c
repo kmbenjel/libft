@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 00:39:56 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/17 04:30:47 by kbenjell         ###   ########.fr       */
+/*   Created: 2022/11/17 04:08:04 by kbenjell          #+#    #+#             */
+/*   Updated: 2022/11/17 05:32:59 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+#include "ft_memcpy.c"
+#include "ft_memmove.c"
+#include <stdio.h>
+#include <string.h>
+int	main(void)
 {
-	char	*p;
+	int integer = 0;
+	int *i = &integer;
+	int *j = i + 1;
 
-	p = dst;
-	if (!src && !dst)
-		return (0);
-	while (n--)
-		*(p + n) = *((char *)src + n);
-	return (dst);
+	if (i < j)
+		printf("i < j");
+	else
+		printf("j < i = Othman:win");
+	printf("\ni: %p\n", i);
+	printf("j: %p\n", j);
+	//printf("%s", ft_memcpy(p, s,0))
 }
