@@ -6,11 +6,12 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 00:39:56 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/17 04:30:47 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/17 06:01:22 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char	*p;
