@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 00:40:00 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/18 19:22:09 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/18 19:26:20 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	lendst = ft_strlen(dst);
 	srcsize = ft_strlen(src);
-	if (dstsize < lendst)
+	if (dstsize <= lendst)
 		return (dstsize + srcsize);
 	if (dstsize > 0)
 	{
@@ -35,4 +35,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	return (lendst + srcsize);
 }
-
