@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 20:38:23 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/18 21:27:02 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/18 21:28:29 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@ char	*ft_strchr(const char *s, int c)
 	char	*string;
 
 	string = (char *)s;
-	(void)c;
-	*string = '\0';
-	/*string = (char *)s;
 	while (*string)
 	{
 		if (*string == c)
@@ -26,6 +23,6 @@ char	*ft_strchr(const char *s, int c)
 		string++;
 	}
 	if (c == 0)
-		return (string);*/
+		return (string);
 	return (string);
 }
