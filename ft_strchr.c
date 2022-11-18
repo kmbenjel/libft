@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 20:38:23 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/18 21:28:29 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/18 21:38:15 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strchr(const char *s, int c)
 			return (string);
 		string++;
 	}
-	if (c == 0)
+	if ((char)c == '\0')
 		return (string);
-	return (string);
+	return (0);
 }
