@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/18 19:45:22 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/18 19:59:23 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 int					ft_toupper(int c);
-//int					ft_tolower(int c);
+int					ft_tolower(int c);
 //int					ft_strchr(int c);
 //int					ft_strrch(int c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);

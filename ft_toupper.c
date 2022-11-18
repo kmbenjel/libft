@@ -6,11 +6,13 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 19:43:16 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/18 19:45:53 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/18 20:03:29 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
+	if (c < 97 || c > 122)
+		return (c);
 	return (c - 32);
 }
