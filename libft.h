@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/18 22:26:56 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/19 08:41:14 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
+int					memcmp(const void *s1, const void *s2, size_t n);
 //int					ft_atoi(int c);
 //int					ft_calloc(int c);
 //int					ft_strdup(int c);
