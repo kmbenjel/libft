@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/19 09:19:34 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/19 23:44:54 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_atoi(const char *str);
-//int					ft_calloc(int c);
+void				*ft_calloc(size_t count, size_t size);
 //int					ft_strdup(int c);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
