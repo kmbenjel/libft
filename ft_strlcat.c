@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 00:40:00 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/18 19:31:40 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/20 21:50:37 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	lendst;
 
 	i = 0;
+	if (!dstsize)
+		return (0);
 	lendst = ft_strlen(dst);
 	srcsize = ft_strlen(src);
 	if (dstsize <= lendst)

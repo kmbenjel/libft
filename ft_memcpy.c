@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 00:39:56 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/17 06:01:22 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/20 21:27:43 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	p = dst;
 	if (!src && !dst)
 		return (0);
+	if (dst == src)
+		return (dst);
 	while (n--)
 		*(p + n) = *((char *)src + n);
 	return (dst);

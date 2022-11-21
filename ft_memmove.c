@@ -6,24 +6,11 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 23:48:20 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/17 09:29:22 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/20 21:47:16 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*
-int restrict	ft_step_between(char *d, char *s)
-{
-	int	step;
-
-	step = 0;
-	while (s)
-	{
-		
-	}
-}
-*/
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -36,7 +23,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	s = (char *)src;
 	if (!src && !dst)
 		return (0);
-	if (len == 0)
+	if (dst == src)
 		return (dst);
 	if (dst < src)
 	{
