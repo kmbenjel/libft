@@ -5,5 +5,5 @@
 int main(int ac, char**av)
 {
 	int n = atoi(av[1]);
-	printf("%d", ft_count_target(n));
+	printf("%s", ft_itoa(n));
 }
