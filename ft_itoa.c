@@ -1,8 +1,8 @@
 #include <stdlib.h>
 
-int static ft_count_target(int n)
+unsigned int static ft_count_target(int n)
 {
-	int i;
+	unsigned int i;
 
 	i = 1;
 	if (n < 0)
@@ -12,18 +12,20 @@ int static ft_count_target(int n)
 	return (i);
 }
 
+/*	FT_COUNT_TARGET counts how much bytes should be allocated
+	for the resulting ascii-string, it makes room for '-'
+	and the trailing '\0'	*/
+
 char *ft_itoa(int n)
 {
 	char *str;
 	unsigned int target;
 	unsigned int i;
-	int int_min;
 
-	int_min = -2147483648;
 	target = ft_count_target(n);
-	str = malloc(ft_count_target(n));
+	str = malloc(target);
 
-	if (n == int_min)
+	if (n == -2147483648)
 		return "-2147483648";
 	if (n < 0) {
 		*str = '-';

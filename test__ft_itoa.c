@@ -6,5 +6,5 @@
 int main(int ac, char**av)
 {
 	int n = atoi(av[1]);
-	printf("%s", ft_itoa(INT_MIN));
+	printf("%s", ft_itoa(n));
 }
