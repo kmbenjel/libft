@@ -26,7 +26,10 @@ char *ft_itoa(int n)
 	str = malloc(target);
 
 	if (n == -2147483648)
-		return "-2147483648";
+	{
+		str = "-2147483648";
+		return str;
+	}
 	if (n < 0) {
 		*str = '-';
 		n *= -1;
