@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 07:29:08 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/23 11:11:16 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/24 00:11:41 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,42 +32,50 @@ static unsigned int	ft_count_target(int n)
 	for the resulting ascii-string, it makes room for '-'
 	and the trailing '\0'	*/
 
-char	*ft_positive_itoa(char *str, int n, int target)
+char	*ft_complete(char *str, char *p, int n, unsigned int target)
 {
 	unsigned int	i;
 
-	str[target - 1] = 0;
-	str += target - 1;
-	i = target - 1;
-	if (!n && str-- && i--)
+	i = 0;
+	p[target - 1] = 0;
+	p += target - 2;
+	if (!n)
+	{
 		*str = '0';
+		return (str);
+	}
 	if (n < 0)
 	{
-		*(str - i - 1) = '-';
+		*str = '-';
 		n *= -1;
-		str--;
+		i++;
 	}
-	while (n && str-- && i--)
+	while (n)
 	{
-		*str = n % 10 + '0';
+		*p = n % 10 + '0';
 		n /= 10;
+		p--;
 	}
-	return (str - i);
+	return (str);
 }
 
 char	*ft_itoa(int n)
 {
 	char			*str;
+	char			*p;
 	unsigned int	target;
 
 	target = ft_count_target(n);
 	str = malloc(target);
+	p = str;
 	if (!str)
 		return (0);
 	if (n == -2147483648)
 	{
-		str = "-2147483648";
+		n++;
+		ft_complete(str, p, n, target);
+		str[target - 2] = '8';
 		return (str);
 	}
-	return (ft_positive_itoa(str, n, target));
+	return (ft_complete(str, p, n, target));
 }
