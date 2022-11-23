@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 07:29:08 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/24 00:11:41 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/24 00:16:02 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ static unsigned int	ft_count_target(int n)
 
 char	*ft_complete(char *str, char *p, int n, unsigned int target)
 {
-	unsigned int	i;
-
-	i = 0;
 	p[target - 1] = 0;
 	p += target - 2;
 	if (!n)
@@ -48,7 +45,6 @@ char	*ft_complete(char *str, char *p, int n, unsigned int target)
 	{
 		*str = '-';
 		n *= -1;
-		i++;
 	}
 	while (n)
 	{
