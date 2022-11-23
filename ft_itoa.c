@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/23 07:29:08 by kbenjell          #+#    #+#             */
+/*   Updated: 2022/11/23 07:29:19 by kbenjell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdlib.h>
 
-unsigned int static ft_count_target(int n)
+unsigned int static	ft_count_target(int n)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 1;
 	if (n < 0)
@@ -16,21 +27,21 @@ unsigned int static ft_count_target(int n)
 	for the resulting ascii-string, it makes room for '-'
 	and the trailing '\0'	*/
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *str;
-	unsigned int target;
-	unsigned int i;
+	char			*str;
+	unsigned int	target;
+	unsigned int	i;
 
 	target = ft_count_target(n);
 	str = malloc(target);
-
 	if (n == -2147483648)
 	{
 		str = "-2147483648";
-		return str;
+		return (str);
 	}
-	if (n < 0) {
+	if (n < 0)
+	{
 		*str = '-';
 		n *= -1;
 	}
@@ -42,5 +53,5 @@ char *ft_itoa(int n)
 		*str = n % 10 + '0';
 		n /= 10;
 	}
-	return str - i;
+	return (str - i);
 }
