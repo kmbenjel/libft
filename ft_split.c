@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:42:13 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/17 22:40:05 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/23 09:58:28 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -30,7 +30,7 @@ static int	ft_splits_count(char const *s, char c, int splits, int i)
 /*	FT_SPLITS_COUNT() is intended to count how many char strings should
     occur in the array of strings returned from FT_SPLIT() . */
 
-int	*ft_splits_charcount(char const *s, char c, int sc, int i)
+static int	*ft_splits_charcount(char const *s, char c, int sc, int i)
 {
 	int	*counts;
 
