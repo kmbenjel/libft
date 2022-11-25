@@ -6,11 +6,11 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 21:39:02 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/25 10:43:49 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/25 10:44:53 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*trimmed;
@@ -37,5 +37,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed[lresult] = 0;
 	return (trimmed);
 }
-
-/*	lresult is used in */
