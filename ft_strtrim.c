@@ -6,38 +6,36 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 21:39:02 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/25 09:17:41 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/25 10:43:49 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
+#include <stdio.h>
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*trimmed;
-	char			*last;
-	unsigned int	times;
 	unsigned int	start;
+	unsigned int	end;
 	unsigned int	lresult;
+	unsigned int	lset;
 
-	times = 0;
+	lset = ft_strlen(set);
 	start = 0;
+	end = ft_strlen(s1);
+	lresult = end;
 	if (!s1)
 		return (0);
 	if (!set)
 		return (ft_strdup(s1));
-	last = (char *)s1 + ft_strlen(s1) - ft_strlen(set);
-	if (ft_strnstr(s1, set, ft_strlen(set)) == (char *)s1 && !times++)
-		start += ft_strlen(set);
-	if (ft_strnstr(last, set, ft_strlen(set)) == last && last != (char *)s1)
-		times++;
-	if (times == 0)
-		return (ft_strdup(s1));
-	lresult = ft_strlen(s1) - ft_strlen(set) * times;
-	trimmed = (char *)s1;
-	trimmed = ft_strdup(trimmed + start);
-	if (!trimmed)
-		return (0);
-	//if (lresult)
-	//	trimmed[lresult] = 0;
+	while (ft_strnstr(s1 + start, set, lset) == s1 + start)
+		start += lset;
+	while (ft_strnstr(s1 + lresult - end, set, lset) == s1 + lresult - end)
+		end -= lset;
+	lresult = end - start;
+	trimmed = malloc(lresult + 1);
+	ft_strlcpy(trimmed, s1 + start, lresult + 1);
+	trimmed[lresult] = 0;
 	return (trimmed);
 }
+
+/*	lresult is used in */
