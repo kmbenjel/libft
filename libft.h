@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/24 20:46:13 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/26 03:44:38 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
-//int					ft_strmapi(int c);
+void				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 //int					ft_striteri(int c);
 //int					ft_putchar_fd(int c);
 //int					ft_putstr_fd(int c);
