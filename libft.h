@@ -6,20 +6,19 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/28 17:54:23 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/28 18:27:07 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
-
 
 typedef struct a_list
 {
 	void			*content;
 	struct a_list	*next;
 }					t_list;
+
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);

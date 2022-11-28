@@ -6,11 +6,10 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 03:43:01 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/28 17:55:07 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/28 18:27:48 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -27,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (*(str + i))
 	{
-		*(p + i) = (*f)(i, *(str + i));
+		*(p + i) = f(i, *(str + i));
 		i++;
 	}
 	*(p + i) = 0;
