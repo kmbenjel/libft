@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/28 18:27:07 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/12/03 16:57:57 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -49,7 +49,7 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-//int					ft_striteri(int c);
+void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 //int					ft_putchar_fd(int c);
 //int					ft_putstr_fd(int c);
 //int					ft_putnbr_fd(int c);
