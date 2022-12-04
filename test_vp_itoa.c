@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 07:29:08 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/12/04 13:49:04 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/11/24 00:16:02 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static unsigned int	ft_count_target(int n)
 	for the resulting ascii-string, it makes room for '-'
 	and the trailing '\0'	*/
 
-static char	*ft_complete(char *str, char *p, int n, unsigned int target)
+char	*ft_complete(char *str, char *p, int n, unsigned int target)
 {
 	p[target - 1] = 0;
 	p += target - 2;
