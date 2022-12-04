@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 18:16:11 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/12/04 21:44:31 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/12/04 21:52:14 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -21,13 +21,11 @@ void	ft_putnbr_fd(int n, int fd)
 		{
 			ft_putchar_fd('2', fd);
 			ft_putnbr_fd(147483648, fd);
+			return ;
 		}
 		n = -n;
-		printf("\n%d\n", n);
 	}
 	if (n >= 10)
-	{
 		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(n % 10 + '0', fd);
-	}
+	ft_putchar_fd(n % 10 + '0', fd);
 }
