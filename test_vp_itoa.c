@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 07:29:08 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/11/24 00:16:02 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/12/04 14:15:35 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,20 +57,14 @@ char	*ft_complete(char *str, char *p, int n, unsigned int target)
 
 char	*ft_itoa(int n)
 {
-	char			*str;
-	char			*p;
-	unsigned int	target;
+	char	*str;
 
-	target = ft_count_target(n);
-	str = malloc(target);
-	p = str;
-	if (!str)
-		return (0);
+	str = 0;
 	if (n == -2147483648)
 	{
 		n++;
-		ft_complete(str, p, n, target);
-		str[target - 2] = '8';
+		ft_itoa(n);
+		str[ft_strlen(str) - 1] = '8';
 		return (str);
 	}
 	return (ft_complete(str, p, n, target));
