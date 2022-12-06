@@ -6,12 +6,11 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 20:05:34 by kbenjell          #+#    #+#              #
-#    Updated: 2022/12/07 00:09:32 by kbenjell         ###   ########.fr        #
+#    Updated: 2022/12/07 00:21:00 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-BONUS = libft_bonus.a
 RM = rm -Rf
 CFLAGS = -Wall -Wextra -Werror -c
 AR = ar -rcs
@@ -64,17 +63,13 @@ OBJ = $(SRC:%.c=%.o)
 
 OBJ_BONUS = $(SRC_BONUS:%.c=%.o)
 
-all : $(NAME) $(BONUS)
-
-mand : $(NAME)
-
-bonus : $(BONUS)
+all : $(NAME)
 
 $(NAME) : $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-$(BONUS) : $(OBJ_BONUS)
-	$(AR) $(BONUS) $(OBJ_BONUS)
+bonus : $(OBJ_BONUS)
+	$(AR) $(NAME) $(OBJ_BONUS)
 
 clean :
 	$(RM) $(OBJ) 
@@ -82,6 +77,5 @@ clean :
 
 fclean : clean
 	$(RM) $(NAME)
-	$(RM) $(BONUS)
 
 re : fclean all
