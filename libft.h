@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/12/03 18:21:20 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:04:33 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -16,7 +16,7 @@
 typedef struct a_list
 {
 	void			*content;
-	struct a_list	*next;
+	struct s_list	*next;
 }					t_list;
 
 int					ft_isalnum(int c);
