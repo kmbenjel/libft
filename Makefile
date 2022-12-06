@@ -6,11 +6,12 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 20:05:34 by kbenjell          #+#    #+#              #
-#    Updated: 2022/11/13 20:06:46 by kbenjell         ###   ########.fr        #
+#    Updated: 2022/12/06 19:55:21 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+BONUS = libft_bonus.a
 RM = rm -Rf
 CFLAGS = -Wall -Wextra -Werror -c
 AR = ar -rcs
@@ -58,15 +59,34 @@ SRC = 	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 
+SRC_BONUS = ft_lstadd_back.c \
+		ft_lstadd_front.c \
+		ft_lstclear.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstlast.c \
+		ft_lstmap.c \
+		ft_lstsize.c \
+
 OBJ = $(SRC:%.c=%.o)
 
-all : $(NAME)
+OBJ_BONUS = $(SRC_BONUS:%.c=%.o)
+
+all : $(NAME) $(BONUS)
+
+mand : $(NAME)
+
+bonus : $(BONUS)
 
 $(NAME) : $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
+$(BONUS) : $(OBJ_BONUS)
+	$(AR) $(BONUS) $(OBJ_BONUS)
+
 clean :
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) 
+	$(RM) $(OBJ_BONUS)
 
 fclean : clean
 	$(RM) $(NAME)
