@@ -6,6 +6,11 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 21:59:13 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/12/04 21:59:17 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:15:04 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
+
+t_list	*ft_lstnew(void *content)
+{
+}
