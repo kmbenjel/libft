@@ -6,7 +6,7 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 20:05:34 by kbenjell          #+#    #+#              #
-#    Updated: 2022/12/06 20:03:20 by kbenjell         ###   ########.fr        #
+#    Updated: 2022/12/06 23:35:06 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ SRC_BONUS = ft_lstadd_back.c \
 		ft_lstlast.c \
 		ft_lstmap.c \
 		ft_lstsize.c \
+		ft_lstnew.c \
 
 OBJ = $(SRC:%.c=%.o)
 
