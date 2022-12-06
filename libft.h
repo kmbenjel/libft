@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 20:07:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/12/06 16:04:33 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:08:52 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -54,8 +54,8 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-//int					ft_lstnew(int c);
-//int					ft_lstadd_front(int c);
+t_list				*ft_lstnew(void *content);
+void				ft_lstadd_front(t_list **lst, t_list *new);
 //int					ft_lstsize(int c);
 //int					ft_lstlast(int c);
 //int					ft_lstadd_back(int c);
