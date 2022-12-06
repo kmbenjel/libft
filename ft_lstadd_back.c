@@ -6,10 +6,10 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:24:11 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/12/06 16:24:21 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:03:04 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_lstadd_back(t_list, **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 }
