@@ -6,7 +6,7 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 20:05:34 by kbenjell          #+#    #+#              #
-#    Updated: 2022/12/06 20:00:35 by kbenjell         ###   ########.fr        #
+#    Updated: 2022/12/06 20:03:20 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,5 +81,6 @@ clean :
 
 fclean : clean
 	$(RM) $(NAME)
+	$(RM) $(BONUS)
 
 re : fclean all
