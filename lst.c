@@ -1,4 +1,6 @@
-//function that loops throught the t_list lst and applies the function f to each link returning a new list. call del on the content when a new list node allocation fails, prototype it this way: t_list	*ft_lstmap(t_list *lst,void *(*f)(void *), void (*del)(void *)).
+//function that loops throught the t_list lst and applies the function f to each link returning a new list. call del on the content when a new list node allocation fails,
+		// prototype it this way: t_list	*ft_lstmap(t_list *lst,void *(*f)(void *),
+		// 	void (*del)(void *)).
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

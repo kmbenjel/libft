@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 05:53:37 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/12/07 10:26:31 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:00:53 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*tmp;
 
 	tmp = 0;
-	if (!lst)
+	if (!lst || !*lst || del)
 		return ;
 	current = *lst;
 	while (current)
