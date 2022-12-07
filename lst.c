@@ -1,19 +1,21 @@
-// Create a function that clears linked list from a certain point,
-	// it should use del and free. it uses current as a temporary variable to store the next node,
-	// must be protoryped: void clear_list(list_t **lst, void(del*)(void *)).
+//function that loops throught the t_list lst and applies the function f to each link returning a new list
 
-void	clear_list(list_t **lst, void(del *)(void *))
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	list_t	*current;
-	list_t	*temp;
+	t_list *new;
+	t_list *tmp;
 
-	current = *lst;
-	while (current != NULL)
+	new = NULL;
+	while (lst)
 	{
-		temp = current->next;
-		del(current->data);
-		free(current);
-		current = temp;
+		tmp = ft_lstnew(f(lst->content));
+		if (!tmp)
+		{
+			ft_lstclear(&new, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new, tmp);
+		lst = lst->next;
 	}
-	*lst = NULL;
+	return (new);
 }
