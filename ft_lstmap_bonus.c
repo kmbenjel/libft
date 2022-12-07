@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 09:18:01 by kbenjell          #+#    #+#             */
-/*   Updated: 2022/12/07 10:48:20 by kbenjell         ###   ########.fr       */
+/*   Updated: 2022/12/07 10:56:52 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -27,7 +27,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		}
 		ft_lstadd_back(&new, tmp);
 		lst = lst->next;
-		count++;
 	}
 	return (new);
 }
