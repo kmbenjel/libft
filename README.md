@@ -1,7 +1,7 @@
 Welcome!
+My name is Khalid.
 
-That was my solution to the libft project at 1337 school (42-Network).
+This includes my solution to the libft project at 1337 School (42-Network), a rich library of functions in C to use in the upcoming projects, where you're not allowed to use the standard C libraries unless stated in the subject, you should use your own code instead.
 
-I discourage from using it while working on the same level at school, id'd rather recommend using it after the validation of your own libft project in the Intra, either just to learn more through analysing someone else's code, or even to pick some of my implementations for your personal libft copy that you will use in your latter projects.
+This project will have many changes and many new functions added to the library as needed for my work along the journey.
 
-All of the code is original. While working, I was never getting inspiration by reading the others' code, except for `FT_LSTCLEAR`, where I got impacted by a Github Copilot suggestion. I'm sure you'd appreciate a considerable part of the work.
